@@ -1,12 +1,11 @@
-const express = require("express");
-const logger = require("morgan");
-const bodyParser = require("body-parser");
+const express = require('express');
+const logger = require('morgan');
 const app = express();
 
-app.use(logger("dev"));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.use(require("./controllers"));
+app.use(require('./controllers'));
 
-app.listen(3000, () => console.log("listening on port 3000"));
+app.listen(3000, () => console.log('listening on port 3000'));
